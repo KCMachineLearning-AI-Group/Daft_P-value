@@ -1,0 +1,7 @@
+dummy = pd.get_dummies(data_test.Age, columns = ['Unknown', 'Baby', 'Child', 'Teenager', 'Student', 'Young Adult', 'Adult', 'Senior'])
+dummy_2 = pd.get_dummies(data_test.Fare, columns = ['Unknown', '1_quartile', '2_quartile', '3_quartile', '4_quartile'])
+
+data_test = pd.concat([data_test, dummy], axis=1)
+data_test = pd.concat([data_test, dummy_2], axis=1)
+data_test = data_test.drop(['Age', 'Fare'], axis=1)
+data_test.head()
